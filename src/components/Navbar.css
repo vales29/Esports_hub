@@ -1,0 +1,116 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.9); /* Dark glass effect */
+    border-bottom: 2px solid rgba(0, 255, 255, 0.6);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00eaff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.logo span {
+    color: #ff00ff; /* Pink glow effect */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li {
+    padding: 10px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Glow Hover Effect */
+.nav-links a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00eaff, #ff00ff);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Futuristic Button */
+.btn-neon {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid #00eaff;
+    color: #00eaff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-neon:hover {
+    color: black;
+    background: linear-gradient(90deg, #00eaff, #ff00ff);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+}
+
+/* Mobile Menu Toggle */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.icon {
+    color: #00eaff;
+    font-size: 2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 200px;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        border-radius: 10px;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
