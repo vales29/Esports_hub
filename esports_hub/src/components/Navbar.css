@@ -1,0 +1,149 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Orbitron", sans-serif; /* Futuristic font */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(15, 15, 30, 0.9); /* Modern dark glass effect */
+    border-bottom: 2px solid rgba(0, 255, 255, 0.6);
+    box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px); /* Smooth glass effect */
+}
+
+/* Logo */
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0ff; /* Neon cyan */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.logo span {
+    color: #ff00ff; /* Neon pink */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li {
+    padding: 10px 0;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+/* Smooth Hover Effect */
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00eaff, #ff00ff);
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+/* Modern Glassmorphism Login Button */
+.btn-glow {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.3);
+}
+
+.btn-glow:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    border-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.icon {
+    color: #00eaff;
+    font-size: 2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .btn-glow {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(15, 15, 30, 0.9);
+        width: 220px;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        border-radius: 12px;
+        display: none;
+        box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

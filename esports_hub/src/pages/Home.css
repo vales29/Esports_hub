@@ -1,0 +1,218 @@
+/* Home.css */
+/*.landing-container {
+    background: linear-gradient(to bottom right, #121212, #1e1e2e);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}*/
+
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the page takes up the full height */
+    padding-bottom: 100px;
+}
+
+.footer {
+    margin-top: auto; /* Push footer to the bottom */
+    position: relative; /* Ensure it doesn’t overlap */
+    z-index: 10;
+}
+/* Hero Section */
+.hero-section {
+    background: url('your-hero-image-url.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1; /* Ensure hero section stays above footer */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #e2e8f0;
+}
+
+.cta-button {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cta-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Features Section */
+.features-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensure features stay above footer */
+}
+
+.features-section .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: #1a1a2e;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: var(--gray);
+    font-size: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--primary-dark);
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 3; /* Ensure CTA section stays above footer */
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #e2e8f0;
+}
+
+/* Footer */
+.footer {
+    background: #0a0a0a;
+    padding: 1rem 0;
+    border-top: 1px solid #7a00ff;
+    z-index: 0; /* Ensure footer is at the bottom of content */
+    position: relative; /* Allows footer to stay at the bottom but also handle z-index */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #7a00ff;
+}
+
+.footer-logo span {
+    color: white;
+    font-weight: 400;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #7a00ff;
+}
+
+.footer-social {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.footer-social a {
+    color: #aaa;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: #7a00ff;
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #555;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #222;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}

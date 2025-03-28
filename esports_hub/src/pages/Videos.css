@@ -1,0 +1,220 @@
+/* Videos.css */
+:root {
+    --primary: #7a00ff;
+    --primary-light: #9d4dff;
+    --dark: #1a1a2e;
+    --darker: #121212;
+    --light: #f8f9fa;
+    --gray: #94a3b8;
+    --gray-dark: #64748b;
+  }
+  
+  .videos-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    min-height: 100vh;
+  }
+  
+  .videos-header {
+    margin-bottom: 2rem;
+  }
+  
+  .videos-header h1 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  
+  .videos-header p {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+  }
+  
+  .videos-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  /*search bar*/
+  .search-bar {
+    flex: 1;
+    position: relative;
+    max-width: 400px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    background: var(--dark);
+    border: 1px solid var(--gray-dark);
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+  }
+  
+  .filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--dark);
+    border: 1px solid var(--gray-dark);
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  
+  .filter-toggle:hover {
+    background: var(--gray-dark);
+  }
+  
+  .category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .category-filters button {
+    padding: 0.5rem 1rem;
+    background: var(--dark);
+    border: 1px solid var(--gray-dark);
+    border-radius: 20px;
+    color: var(--gray);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.85rem;
+  }
+  
+  .category-filters button.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+  
+  .videos-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .video-card {
+    background: var(--dark);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .video-thumbnail {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: var(--darker);
+  }
+  
+  .video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .video-card:hover .play-overlay {
+    opacity: 1;
+  }
+  
+  .duration-badge {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+  }
+  
+  .video-info {
+    padding: 1rem;
+  }
+  
+  .video-info h3 {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .video-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .game-tag {
+    background: rgba(122, 0, 255, 0.2);
+    color: var(--primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .views {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--gray);
+    font-size: 0.85rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .videos-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .videos-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .videos-controls {
+      flex-direction: column;
+    }
+    
+    .search-bar {
+      max-width: 100%;
+    }
+  }
